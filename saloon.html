@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Beauty Salon</title>
+
+    <style>
+        /* GLOBAL */
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #fdf7fa;
+            color: #333;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background: linear-gradient(90deg, #d63384, #ff77b7);
+            padding: 25px;
+            text-align: center;
+            font-size: 30px;
+            color: white;
+            letter-spacing: 1px;
+            animation: fadeDown 1s ease-in-out;
+        }
+
+        @keyframes fadeDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        nav {
+            background: #b02a6f;
+            display: flex;
+            justify-content: center;
+            padding: 12px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 18px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            letter-spacing: 1px;
+            opacity: 0.8;
+        }
+
+        section {
+            width: 90%;
+            margin: 40px auto;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h2 {
+            text-align: center;
+            color: #b02a6f;
+            margin-bottom: 25px;
+        }
+
+        /* ---------------- SERVICES ---------------- */
+        .service-container {
+            display: flex;
+            gap: 25px;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .service-card {
+            background: white;
+            width: 31%;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+            transition: 0.4s ease;
+            transform: translateY(0);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .service-card img {
+            width: 100%;
+            height: 200px;
+            border-radius: 10px 10px 0 0;
+            object-fit: cover;
+            transition: 0.4s;
+        }
+
+        .service-card:hover img {
+            filter: brightness(1.1);
+        }
+
+        .service-card h3 {
+            margin: 15px;
+            color: #d63384;
+        }
+
+        .service-card p {
+            margin: 0 15px 20px;
+        }
+
+        /* ---------------- BOOKING FORM ---------------- */
+        .form-box {
+            max-width: 500px;
+            background: white;
+            margin: auto;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .form-box input,
+        .form-box select,
+        .form-box textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0 15px;
+            border: 1px solid #bbb;
+            border-radius: 5px;
+            font-size: 15px;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
+            background: #d63384;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 17px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #a81f63;
+            box-shadow: 0 0 12px #ff99cc;
+        }
+
+        /* ---------------- GALLERY ---------------- */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: 0.4s ease;
+        }
+
+        .gallery-grid img:hover {
+            transform: scale(1.07);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+        }
+
+        /* ---------------- FOOTER ---------------- */
+        footer {
+            background: #7a1d4a;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        /* ---------------- RESPONSIVE ---------------- */
+        @media (max-width: 900px) {
+            .service-card {
+                width: 47%;
+            }
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .service-card {
+                width: 100%;
+            }
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<header>
+    🌸 RoseGlow Beauty Salon
+</header>
+
+<nav>
+    <a href="#services">Services</a>
+    <a href="#booking">Book Online</a>
+    <a href="#gallery">Gallery</a>
+</nav>
+
+<!-- SERVICES -->
+<section id="services">
+    <h2>Our Services</h2>
+
+    <div class="service-container">
+
+        <div class="service-card">
+            <img src="https://via.placeholder.com/300x200?text=Facial">
+            <h3>Luxury Facial</h3>
+            <p>Deep cleansing + Glow treatment for refreshed skin.</p>
+        </div>
+
+        <div class="service-card">
+            <img src="https://via.placeholder.com/300x200?text=Hair+Spa">
+            <h3>Hair Spa</h3>
+            <p>Relaxing oil massage and hair nourishment therapy.</p>
+        </div>
+
+        <div class="service-card">
+            <img src="https://via.placeholder.com/300x200?text=Makeup">
+            <h3>Bridal Makeup</h3>
+            <p>Perfect bridal makeover with premium products.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- BOOKING -->
+<section id="booking">
+    <h2>Book an Appointment</h2>
+
+    <div class="form-box">
+        <label>Your Name:</label>
+        <input type="text">
+
+        <label>Phone Number:</label>
+        <input type="text">
+
+        <label>Select Service:</label>
+        <select>
+            <option>Luxury Facial</option>
+            <option>Hair Spa</option>
+            <option>Bridal Makeup</option>
+        </select>
+
+        <label>Preferred Date:</label>
+        <input type="date">
+
+        <label>Special Notes:</label>
+        <textarea rows="4"></textarea>
+
+        <button class="btn">Book Appointment</button>
+    </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+    <h2>Before & After Gallery</h2>
+
+    <div class="gallery-grid">
+        <img src="https://via.placeholder.com/300x300?text=Before+1">
+        <img src="https://via.placeholder.com/300x300?text=After+1">
+        <img src="https://via.placeholder.com/300x300?text=Spa+1">
+
+        <img src="https://via.placeholder.com/300x300?text=Before+2">
+        <img src="https://via.placeholder.com/300x300?text=After+2">
+        <img src="https://via.placeholder.com/300x300?text=Makeup+2">
+    </div>
+</section>
+
+<footer>
+    © 2025 RoseGlow Beauty Salon. All Rights Reserved.
+</footer>
+
+</body>
+</html>
